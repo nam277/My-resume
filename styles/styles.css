@@ -1397,8 +1397,8 @@ p {
 }
 
 @media (max-width: 513px) {
-  #home {
-    overflow: hidden;
+  section {
+    overflow-x: hidden;
   }
   #home .left-header img {
     width: 70%;
@@ -1411,8 +1411,8 @@ p {
   }
   #home .right-header .name {
     padding-bottom: 0.5rem;
-    font-size: 2.3rem;
-    line-height: 2.7rem;
+    font-size: 2.1rem;
+    line-height: 2.3rem;
     letter-spacing: 0;
   }
   #home .right-header p {
