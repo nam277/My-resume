@@ -1,0 +1,337 @@
+// Tablet
+@media (max-width: 1024px) {
+    section {
+        padding-bottom: 2rem !important;
+    }
+
+    #controls {
+        .control {
+            height: 5rem;
+            width: 5rem;
+            i {
+                font-size: 1.6rem
+            }
+        }
+        .active-btn {
+            i {
+                font-size: 2rem
+            }
+        }
+    }
+
+    .download {
+        left: 50%;
+        transform: translateX(-50%) scale(1.2) ;
+    }
+
+    #about {
+        .skill-name {
+            font-size: 1.5rem
+        }
+
+        .textPercent {
+            font-size: 1.2rem
+        }
+
+        .year-line {
+            font-size: 1rem
+        }
+
+        .timeline-icon {
+            height: 3.5rem;
+            width: 3.5rem;
+        }
+
+    }
+
+    #blogs {
+        .blog-img {
+            img {
+                height: 350px
+            }
+            &::before {
+                bottom: -3px;
+                height: 8px;
+            }
+        }
+
+        .blog-content {
+            .blog-title {
+                font-size: 1.5rem;
+            }
+            .sub-blog {
+                font-size: 1.2rem;
+                line-height: 1.5rem;
+            }
+        }
+    }
+
+    #contact {
+        .contact-content {
+            .left-contact {
+                .left-sub {
+                    font-size: 1.2rem;
+                }
+                .left-body {
+                    .body-item {
+                        i {
+                            font-size: 2rem;
+                        }
+                        .item {
+                            font-size: 1.2rem;
+                        }
+                        .item-detail {
+                            font-size: 1.2rem;
+                        }
+                    }
+                }
+                .left-icon {
+                    .icon {
+                        width: 3.5rem;
+                        height: 3.5rem;
+                        i {
+                            font-size: 2rem;
+                        }
+                    }
+                }
+            }
+            .right-contact {
+                margin-top: 2rem;
+                .row {
+                    .col {
+                        input {
+                            padding: 0.8rem 1.2rem;
+                            border-radius: 1.2rem;
+                            &::placeholder {
+                                font-size: 1.1rem
+                            }
+                        }
+                    }
+                }
+                .subject {
+                    padding: 0.8rem 1.2rem;
+                    border-radius: 1.2rem;
+                    border-color: transparent;
+                    &::placeholder {
+                        font-size: 1.1rem
+                    }
+                }
+                .message {
+                    flex: 1;
+                    min-height: 15rem;
+                    padding: 0.8rem 1.2rem;
+                    border-radius: 1.2rem;
+                    &::placeholder {
+                        top: 10%;
+                        font-size: 1.3rem
+                    }
+                }
+            }
+        }
+    }
+}
+
+// Small Tablet
+@media (max-width: 739px) {
+    #home {
+        overflow-y: scroll;
+        .left-header {
+            height: 50%;
+            width: 100%;
+            .h-shape {
+                width: 100%;
+                height: 100%;
+                position: absolute;
+                top: 0;
+                left: 0;
+                z-index: -1;
+                clip-path: polygon(0 0, 50% 0, 50% 100%, 0% 100%);
+            }
+            img {
+                position: absolute;
+                top: 5%;
+                left: 50%;
+                height: 90%;
+                width: 50%;
+                transform: translateX(-50%);
+                margin: 0;
+                -o-object-fit: cover;
+                object-fit: cover;
+            }
+        }
+        .right-header {
+            position: absolute;
+            top: 55%;
+            left: 50%;
+            transform: translateX(-50%);
+            padding-bottom: 3rem;
+            width: 80%;
+            .name {
+                font-size: 3rem;
+                line-height: rem;
+                span {
+                    color: var(--color-secondary);
+                }
+            }
+            p {
+                font-size: 1.5rem;
+            }
+        }
+    }
+
+    #about {
+        padding: 0 1.5rem 2rem 1.5rem;
+    }
+
+    #portfolio {
+        padding: 0 1.2rem 2rem 1.2rem;
+        .portfolio-header {
+            .header {
+                font-size: 2.8rem;
+            }
+        }
+    }
+
+    #blogs {
+        padding: 0 1.5rem 2rem 1.5rem;
+    }
+
+    #contact {
+        padding: 0 1.5rem 2rem 1.5rem;
+        .left-body {
+            .body-item {
+                flex-direction: column;
+                margin-top: 2rem;
+                .item-detail {
+                    span {
+                        display: none;
+                    }
+                }
+            }
+        }
+        .left-icon {
+            justify-content: space-between;
+        }
+        .right-input {
+            .col {
+                input {
+                    margin-top: 1rem;
+                }
+            }
+        }
+    }
+}
+
+// Mobile
+@media (max-width: 513px) {
+    #home {
+        .left-header {
+            img {
+                width: 70%;
+            }
+        }
+
+        .right-header {
+            position: absolute;
+            top: 51%;
+            left: 50%;
+            width: 80%;
+
+            .name {
+                padding-bottom: 1rem;
+                font-size: 2.3rem;
+                line-height: 2.7rem;
+                letter-spacing: 0;
+            }
+
+            p {
+                font-size: 1.2rem;
+            }
+        }
+    }
+
+    .about {
+        .about-me-content {
+            margin-top: 1.5rem;
+            padding-bottom: 3rem;
+            .left-content {
+                p {
+                    font-size: 0.9rem;
+                    line-height: 1.3rem;
+                }
+            }
+            .right-content {
+                .frames {
+                    .setMargin {
+                        flex: 0 0 100%;
+                        max-width: 100%;
+                        .frame {
+                            .slang {
+                                &::before {
+                                    width: 5rem;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .my-skill {
+            .my-skill-text {
+                margin-bottom: 0 !important;
+            }
+        }
+        .my-timeline {
+            .timeline-text {
+                margin-bottom: 0 !important;
+                font-size: 2rem;
+            }
+        }
+    }
+
+    .theme {
+        top: 10%;
+        left: 3%;
+    }
+    .menu {
+        position: fixed;
+        top: 20%;
+        left: 3%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 45px;
+        width: 45px;
+        margin-bottom: 2rem;
+        border-radius: 50%;
+        background-color: var(--color-grey-4);
+        cursor: pointer;
+        box-shadow: var(--box-shadow-1);
+        transition: all .5s linear;
+        i {
+            color: var(--color-grey-5);
+            pointer-events: none;
+        }
+    }
+    
+    #controls {
+        left: 3%;
+        right:unset;
+        animation: slipperyOut  0.5s linear;
+        .control {
+            height: 45px;
+            width: 45px;
+            i {
+                font-size: 1.3rem;
+            }
+        }
+        .active-btn {
+            animation: scale .5s linear;
+        }
+    }
+    .hidden-menu.controls {
+        display: none;
+    }
+}
+
+
