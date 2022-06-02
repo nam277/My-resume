@@ -181,6 +181,7 @@ section {
   -webkit-transition: all .4s ease-in-out;
   transition: all .4s ease-in-out;
   margin-top: 2rem !important;
+  padding-bottom: 2rem !important;
 }
 
 .section {
@@ -276,6 +277,7 @@ p {
   background-color: var(--color-secondary);
   z-index: -1;
   opacity: 0;
+  border-radius: inherit;
 }
 
 .download:hover {
@@ -1187,9 +1189,6 @@ p {
 }
 
 @media (max-width: 1024px) {
-  section {
-    padding-bottom: 2rem !important;
-  }
   #controls .control {
     height: 5rem;
     width: 5rem;
@@ -1398,6 +1397,9 @@ p {
 }
 
 @media (max-width: 513px) {
+  #home {
+    overflow: hidden;
+  }
   #home .left-header img {
     width: 70%;
   }
@@ -1408,13 +1410,14 @@ p {
     width: 80%;
   }
   #home .right-header .name {
-    padding-bottom: 1rem;
+    padding-bottom: 0.5rem;
     font-size: 2.3rem;
     line-height: 2.7rem;
     letter-spacing: 0;
   }
   #home .right-header p {
-    font-size: 1.2rem;
+    font-size: 1rem;
+    line-height: 1.4rem;
   }
   .about .about-me-content {
     margin-top: 1.5rem;
