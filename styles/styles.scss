@@ -5,6 +5,11 @@
     list-style: none;
 }
 
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 3rem;
+}
+
 :root {
     --color-primary: #191d2b;
     --color-secondary: #27ae60;
@@ -96,7 +101,6 @@
 header {
     height: 100vh;
     color: var(--color-white);
-    overflow: hidden;
     display: none;
 }
 
@@ -110,6 +114,7 @@ section {
 .section {
     display: none;
     transform: translateY(0) scale(1);
+    overflow-x: hidden;
 }
 
 .active {
