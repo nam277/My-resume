@@ -26,20 +26,22 @@ const app = {
         }
     },
 
-    // scrollPage: function() {
-    //     window.onscroll = () => {
-    //         $$('.section').forEach(sec => {
-    //             let top = window.scrollY
-    //             let height = sec.offsetHeight
-    //             let offset = sec.offsetTop - 150
+    // Function toggle active btn when scroll page
+    scrollPage: function() {
+        window.onscroll = () => {
+            $$('.section').forEach(sec => {
+                let top = window.scrollY
+                let height = sec.offsetHeight
+                let offset = sec.offsetTop - 200
 
-    //             if (top >= offset && top <= offset + height) {
-    //                 sec.classList.remove('active')
+                if (top >= offset && top <= offset + height) {
+                    // Get btn from id of section
+                    $(`[data-id="${sec.id}"]`).classList.add('active-btn')
 
-    //             }
-    //         }) 
-    //     }
-    // },
+                } else $(`[data-id="${sec.id}"]`).classList.remove('active-btn')
+            }) 
+        }
+    },
 
     pageTransition: function() {
         // handling active-btn and active page
@@ -48,6 +50,7 @@ const app = {
             if (app.config.currentPage) {
                 app.currentPage = app.config.currentPage
             }
+
             // Load config when reload browser
             if (index === app.currentPage) {
                 control.classList.add('active-btn')
@@ -68,6 +71,9 @@ const app = {
                 } else {
                     app.setConfig("currentPage", index)
                 }
+
+                // Scroll to active page when click this button that control this page
+                window.scrollTo(0, $(`#${control.dataset.id}`).offsetTop - 20)
                 app.currentPage = app.config.currentPage
             })
         })
@@ -79,7 +85,6 @@ const app = {
             bar.oninput = function () {
                 barParent.querySelector('.textPercent').innerHTML =`${bar.value}%`
                 barParent.querySelector('.bar-width').style.width = bar.value + '%'
-
                 // update value of each progress bar
                 app.setConfig(`${index}`, bar.value)
             }
@@ -88,6 +93,7 @@ const app = {
             if (app.config[index]) {
                 bar.value = app.config[index]
             }
+            
             // Load config when reload browser
             barParent.querySelector('.textPercent').innerHTML =`${bar.value}%`
             barParent.querySelector('.bar-width').style.width = bar.value + '%'
@@ -120,7 +126,7 @@ const app = {
     start: function() {
         this.pageTransition()
 
-        // this.scrollPage()
+        this.scrollPage()
 
         this.progressSkill()
 
