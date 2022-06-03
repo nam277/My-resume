@@ -101,7 +101,6 @@ header {
     height: 100vh;
     color: var(--color-white);
     overflow: hidden;
-    // display: none;
 }
 
 section {
@@ -112,7 +111,7 @@ section {
 }
 
 .section {
-    // display: none;
+    display: none;
     transform: translateY(0) scale(1);
     overflow-x: hidden;
 }
