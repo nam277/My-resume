@@ -32,9 +32,9 @@ const app = {
             $$('.section').forEach(sec => {
                 let top = window.scrollY
                 let height = sec.offsetHeight
-                let offset = sec.offsetTop - 200
+                let offset = sec.offsetTop - 250
 
-                if (top >= offset && top <= offset + height) {
+                if (top >= offset && top < offset + height) {
                     // Get btn from id of section
                     $(`[data-id="${sec.id}"]`).classList.add('active-btn')
 
@@ -93,7 +93,7 @@ const app = {
             if (app.config[index]) {
                 bar.value = app.config[index]
             }
-            
+
             // Load config when reload browser
             barParent.querySelector('.textPercent').innerHTML =`${bar.value}%`
             barParent.querySelector('.bar-width').style.width = bar.value + '%'
