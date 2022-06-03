@@ -7,7 +7,6 @@
 
 html {
     scroll-behavior: smooth;
-    scroll-padding-top: 3rem;
 }
 
 :root {
@@ -101,7 +100,8 @@ html {
 header {
     height: 100vh;
     color: var(--color-white);
-    display: none;
+    overflow: hidden;
+    // display: none;
 }
 
 section {
@@ -112,7 +112,7 @@ section {
 }
 
 .section {
-    display: none;
+    // display: none;
     transform: translateY(0) scale(1);
     overflow-x: hidden;
 }
@@ -771,6 +771,7 @@ p {
                         background-color: var(--color-grey-4);
                         border-radius: 1rem;
                         border-color: transparent;
+                        font-size: 1.2rem;
                         &::placeholder {
                             color: rgba(255, 255, 255, 0.4);
                         }
@@ -791,6 +792,7 @@ p {
                 background-color: var(--color-grey-4);
                 border-radius: 1rem;
                 border-color: transparent;
+                font-size: 1.2rem;
                 &::placeholder {
                     color: rgba(255, 255, 255, 0.4);
                 }
@@ -809,9 +811,8 @@ p {
                 background-color: var(--color-grey-4);
                 border-radius: 1rem;
                 border-color: transparent;
+                font-size: 1.3rem;
                 &::placeholder {
-                    position: absolute;
-                    top: 10%;
                     color: rgba(255, 255, 255, 0.4);
                 }
                 &:focus {

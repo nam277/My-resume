@@ -26,30 +26,50 @@ const app = {
         }
     },
 
+    // scrollPage: function() {
+    //     window.onscroll = () => {
+    //         $$('.section').forEach(sec => {
+    //             let top = window.scrollY
+    //             let height = sec.offsetHeight
+    //             let offset = sec.offsetTop - 150
+
+    //             if (top >= offset && top <= offset + height) {
+    //                 sec.classList.remove('active')
+
+    //             }
+    //         }) 
+    //     }
+    // },
+
     pageTransition: function() {
         // handling active-btn and active page
         $$('.control').forEach((control, index) => {
-            control.addEventListener('click', function(e) {
-                // active-btn
-                $('.active-btn').classList.remove('active-btn')
-                this.classList.add('active-btn')
-
-                // update currentPage into localStorage
-                app.setConfig("currentPage", index)
-                
-                // active page
-                $('.active').classList.remove('active')
-                $(`#${control.dataset.id}`).classList.add('active')
-            })
-
-            // Set currentPage of app from localStorage
-            app.currentPage = app.config.currentPage
-
-            // Filter index of control that equal currentPage. Handling active-bn and render it to browser 
+            // Fix for case: first access to Web. Because in this case app.config is undefined
+            if (app.config.currentPage) {
+                app.currentPage = app.config.currentPage
+            }
+            // Load config when reload browser
             if (index === app.currentPage) {
                 control.classList.add('active-btn')
                 $(`#${control.dataset.id}`).classList.add('active')
+            } else {
+                control.classList.remove('active-btn')
+                $(`#${control.dataset.id}`).classList.remove('active')
             }
+
+            control.addEventListener('click', function(e) {
+                if (index !== app.currentPage) {
+                    $('.active-btn').classList.remove('active-btn')
+                    control.classList.add('active-btn')
+
+                    $('.active').classList.remove('active')
+                    $(`#${control.dataset.id}`).classList.add('active')
+                    app.setConfig("currentPage", index)
+                } else {
+                    app.setConfig("currentPage", index)
+                }
+                app.currentPage = app.config.currentPage
+            })
         })
     },
 
@@ -64,10 +84,13 @@ const app = {
                 app.setConfig(`${index}`, bar.value)
             }
 
-            // Get value of each progress bar and render it for textPercent and style.width when refresh browser
-            bar.value = app.config[index]
-            barParent.querySelector('.textPercent').innerHTML =`${app.config[index]}%`
-            barParent.querySelector('.bar-width').style.width = app.config[index] + '%'
+            // Fix for case: first access to Web. Because in this case app.config is undefined 
+            if (app.config[index]) {
+                bar.value = app.config[index]
+            }
+            // Load config when reload browser
+            barParent.querySelector('.textPercent').innerHTML =`${bar.value}%`
+            barParent.querySelector('.bar-width').style.width = bar.value + '%'
         })
     },
 
@@ -96,6 +119,8 @@ const app = {
 
     start: function() {
         this.pageTransition()
+
+        // this.scrollPage()
 
         this.progressSkill()
 
